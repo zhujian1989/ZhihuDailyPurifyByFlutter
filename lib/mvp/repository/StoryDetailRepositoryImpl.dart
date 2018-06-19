@@ -24,7 +24,7 @@ class StoryDetailRepositoryImpl implements StoryDetailRepository {
 }
 
 Future<BaseModel<StoryExtraModel>> _getStoryExtra(String id) async {
-  Dio dio = new DioFactory(new Dio()).getDio();
+  Dio dio =DioFactory.getInstance().getDio();
 
   String url = Constant.baseUrl + Apis.story_extra + id;
 
@@ -60,7 +60,7 @@ Future<BaseModel<StoryExtraModel>> _getStoryExtra(String id) async {
 
 
 Future<BaseModel<StoryDetailModel>> _getStoryDetail(String id) async {
-  Dio dio = new DioFactory(new Dio()).getDio();
+  Dio dio =DioFactory.getInstance().getDio();
 
   String url = Constant.baseUrl + Apis.detail + id;
 

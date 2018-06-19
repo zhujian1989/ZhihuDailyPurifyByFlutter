@@ -38,6 +38,7 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
     //做个简单的缓存，这个列表不会出现经常发生变化
     _themeList = new CacheUtil().getThemeListCache();
 
+    print(_themeList);
     if (null != _themeList && _themeList.isNotEmpty) {
       _refreshItems();
       return;
@@ -149,12 +150,9 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
       return;
     }
 
-    if (new CacheUtil().setThemeListCache(_themeList)) {
-
-    }
+    new CacheUtil().setThemeListCache(_themeList);
 
     _themeList = model.data;
-
 
     //缓存
     _refreshItems();

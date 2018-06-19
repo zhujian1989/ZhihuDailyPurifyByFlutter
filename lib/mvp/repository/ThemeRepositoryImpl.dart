@@ -19,7 +19,7 @@ class ThemeRepositoryImpl implements ThemeRepository {
 }
 
 Future<BaseModel<List<ThemeModel>>> _getThemes() async {
-  Dio dio = new DioFactory(new Dio()).getDio();
+  Dio dio =DioFactory.getInstance().getDio();
 
   String url = Constant.baseUrl + Apis.themes;
 

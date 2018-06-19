@@ -1,6 +1,7 @@
 import 'package:daily_purify/model/ThemeModel.dart';
 
 class CacheUtil {
+
   List<ThemeModel> themeModelList;
 
   static CacheUtil _singleton;
