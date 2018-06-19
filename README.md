@@ -8,9 +8,7 @@
 ###效果图
 ![dailypurify.gif](https://upload-images.jianshu.io/upload_images/2751425-14a30a7c557e99ad.gif?imageMogr2/auto-orient/strip)
 
-###真机debug对比（华为mate8，iphoneX）
-![real.gif](https://upload-images.jianshu.io/upload_images/2751425-f0f8da59cddfd3de.gif?imageMogr2/auto-orient/strip)
-
+###[我的简书地址有真机对比效果](https://www.jianshu.com/p/ee1539dc4e10)
 
 ## 完成
 1.今日热点  
