@@ -5,10 +5,11 @@
 后续会将未来学到的新知识点用到该项目，持续更新
 
 
-###效果图
+###效果图  
+
 ![dailypurify.gif](https://upload-images.jianshu.io/upload_images/2751425-14a30a7c557e99ad.gif?imageMogr2/auto-orient/strip)
 
-###[我的简书地址有真机对比效果](https://www.jianshu.com/p/ee1539dc4e10)
+[我的简书地址有真机对比效果](https://www.jianshu.com/p/ee1539dc4e10)
 
 ## 完成
 1.今日热点  
