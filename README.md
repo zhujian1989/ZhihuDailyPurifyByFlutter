@@ -4,6 +4,14 @@
 该项目完全开源，单纯为了学习与交流，希望大家喜欢，多多提意见。
 后续会将未来学到的新知识点用到该项目，持续更新
 
+
+###效果图
+![dailypurify.gif](https://upload-images.jianshu.io/upload_images/2751425-14a30a7c557e99ad.gif?imageMogr2/auto-orient/strip)
+
+###真机debug对比（华为mate8，iphoneX）
+![real.gif](https://upload-images.jianshu.io/upload_images/2751425-f0f8da59cddfd3de.gif?imageMogr2/auto-orient/strip)
+
+
 ## 完成
 1.今日热点  
 2.主题分类  
