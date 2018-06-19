@@ -2,7 +2,7 @@ import 'package:daily_purify/model/ThemeModel.dart';
 
 class CacheUtil {
 
-  List<ThemeModel> themeModelList;
+  static List<ThemeModel> themeModelList = [];
 
   static CacheUtil _singleton;
 
@@ -10,6 +10,8 @@ class CacheUtil {
     if (_singleton == null) {
       _singleton = new CacheUtil._internal();
     }
+
+    print(themeModelList);
 
     return _singleton;
   }
