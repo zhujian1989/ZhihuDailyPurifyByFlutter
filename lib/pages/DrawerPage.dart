@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:daily_purify/Utils/CacheUtil.dart';
 import 'package:daily_purify/Utils/RouteUtil.dart';
 import 'package:daily_purify/model/BaseModel.dart';
 import 'package:daily_purify/model/ThemeModel.dart';
@@ -33,6 +34,15 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
   @override
   void initState() {
     super.initState();
+
+    //做个简单的缓存，这个列表不会出现经常发生变化
+    _themeList = new CacheUtil().getThemeListCache();
+
+    if (null != _themeList && _themeList.isNotEmpty) {
+      _refreshItems();
+      return;
+    }
+
     _loadData();
   }
 
@@ -129,7 +139,7 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
 
   @override
   void onLoadThemesFail() {
-    // TODO: implement onLoadThemesFail
+    // TODO: implement  qwonLoadThemesFail
   }
 
   @override
@@ -138,8 +148,15 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
       CommonSnakeBar.buildSnakeBar(context, model.errorMsg);
       return;
     }
+
+    if (new CacheUtil().setThemeListCache(_themeList)) {
+
+    }
+
     _themeList = model.data;
 
+
+    //缓存
     _refreshItems();
   }
 

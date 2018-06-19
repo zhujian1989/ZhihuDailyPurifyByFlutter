@@ -16,7 +16,7 @@ class Constant {
 
 
   //SharedPreferences key
-  static const String spCollectThemes = 'sp_collect_themes';
+  static const String spThemeCache = 'sp_theme_cache';
 
 
 }
