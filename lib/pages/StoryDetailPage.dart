@@ -41,7 +41,6 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _refreshData();
   }
@@ -162,7 +161,6 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('$_title'),

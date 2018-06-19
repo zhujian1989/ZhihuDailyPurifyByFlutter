@@ -2,8 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:daily_purify/Utils/RouteUtil.dart';
-import 'package:daily_purify/Utils/SPUtil.dart';
-import 'package:daily_purify/common/Constant.dart';
 import 'package:daily_purify/model/BaseModel.dart';
 import 'package:daily_purify/model/ThemeModel.dart';
 import 'package:daily_purify/mvp/presenter/ThemePresenter.dart';
@@ -32,16 +30,9 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
 
   List<ThemeModel> _themeList = [];
 
-  List<String> _localCollectThemes = [];
-
   @override
   void initState() {
     super.initState();
-    SPUtil.getStringList(Constant.spCollectThemes).then((list) {
-      if (null != list && list.isNotEmpty) {
-        _localCollectThemes = list;
-      }
-    }).catchError(print);
     _loadData();
   }
 
@@ -55,41 +46,6 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
     completer.complete(null);
 
     return completer.future;
-  }
-
-  bool _isCollectTheme(String id) {
-    SPUtil.getStringList(Constant.spCollectThemes).then((list) {
-      if (null != list && list.isNotEmpty) {
-        _localCollectThemes = list;
-      }
-    }).catchError(print);
-
-    if (null != _localCollectThemes && _localCollectThemes.isNotEmpty) {
-      if (_localCollectThemes.contains(id)) {
-        return true;
-      }
-    } else {
-      return false;
-    }
-    return false;
-  }
-
-  _collectTheme(String id) {
-    SPUtil.getStringList(Constant.spCollectThemes).then((list) {
-      if (null != list && list.isNotEmpty) {
-        _localCollectThemes = list;
-      }
-    }).catchError(print);
-
-    if (_isCollectTheme(id)) {
-      _localCollectThemes.remove(id);
-    } else {
-      _localCollectThemes.add(id);
-    }
-
-    SPUtil.setStringList(Constant.spCollectThemes, _localCollectThemes);
-
-    _refreshItems();
   }
 
   _refreshItems() {
@@ -108,7 +64,6 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
   }
 
   Widget _buildDrawer() {
-    print('_buildDrawer');
     return new UserAccountsDrawerHeader(
       accountName: new Text('$_name'),
       accountEmail: new Text('370159662@qq.com'),
@@ -120,7 +75,6 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
   }
 
   Widget _buildHomeItem() {
-    print('_buildHomeItem');
     return new InkWell(
       onTap: () {
         Navigator.of(context).pop();
@@ -143,23 +97,13 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
   }
 
   Widget _buildOtherItem(ThemeModel model) {
-    print('_buildOtherItem');
-//    bool b = _isCollectTheme('${model.id}');
-//    print('${model.id}: $b');
     return new InkWell(
       onTap: () {
         Navigator.of(context).pop();
         RouteUtil.route2ThemeList(context, '${model.id}');
       },
       child: new ListTile(
-        trailing: new GestureDetector(
-          onTap: () {
-            _collectTheme('${model.id}');
-          },
-          child: _isCollectTheme('${model.id}')
-              ? new Icon(Icons.done)
-              : new Icon(Icons.add),
-        ),
+        trailing: new Icon(Icons.keyboard_arrow_right),
         title: new Text('${model.name}',
             style: new TextStyle(color: Colors.grey[700], fontSize: 18.0)),
       ),
@@ -180,8 +124,6 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
 
   @override
   Widget build(BuildContext context) {
-    print('build');
-    // TODO: implement build
     return _buildBody();
   }
 
