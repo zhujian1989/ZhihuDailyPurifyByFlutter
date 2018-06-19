@@ -4,7 +4,6 @@
 该项目完全开源，单纯为了学习与交流，希望大家喜欢，多多提意见。
 后续会将未来学到的新知识点用到该项目，持续更新
 
-
 ###效果图  
 
 ![dailypurify.gif](https://upload-images.jianshu.io/upload_images/2751425-14a30a7c557e99ad.gif?imageMogr2/auto-orient/strip)
@@ -35,5 +34,6 @@
 5.等等    
 
 
+#若被告知需停止共享与使用，本人会及时删除此页面与整个项目。
 
 
