@@ -2,27 +2,30 @@ import 'package:daily_purify/model/ThemeModel.dart';
 
 class CacheUtil {
 
-  static List<ThemeModel> themeModelList = [];
+  static List<ThemeModel> _themeModelList;
 
   static CacheUtil _singleton;
 
-  factory CacheUtil() {
+  static CacheUtil getInstance() {
     if (_singleton == null) {
       _singleton = new CacheUtil._internal();
+      _singleton._init();
     }
-
-    print(themeModelList);
 
     return _singleton;
   }
 
   CacheUtil._internal();
 
+  _init() {
+    _themeModelList = [];
+  }
+
   setThemeListCache(List<ThemeModel> list) {
-    themeModelList = list;
+    _themeModelList = list;
   }
 
   getThemeListCache() {
-    return themeModelList;
+    return _themeModelList;
   }
 }
