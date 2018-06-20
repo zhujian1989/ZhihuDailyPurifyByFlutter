@@ -1,4 +1,5 @@
 
+import 'package:daily_purify/pages/CommentPage.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_purify/widget/CommonWebView.dart';
 import 'package:daily_purify/Utils/FixUrlUtil.dart';
@@ -73,6 +74,25 @@ class RouteUtil{
         opaque: false,
         pageBuilder: (BuildContext context, _, __) {
           return new ThemeListPage(themeId);
+        },
+        transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
+          return new FadeTransition(
+            opacity: animation,
+            child: new FadeTransition(
+              opacity:
+              new Tween<double>(begin: 0.5, end: 1.0).animate(animation),
+              child: child,
+            ),
+          );
+        }));
+  }
+
+
+  static route2Comment(BuildContext context,String themeId) {
+    Navigator.of(context).push(new PageRouteBuilder(
+        opaque: false,
+        pageBuilder: (BuildContext context, _, __) {
+          return new CommentPage(themeId);
         },
         transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
           return new FadeTransition(

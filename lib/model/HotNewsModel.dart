@@ -30,7 +30,7 @@ class HotNewsStoriesModel {
   }
 
   setCurDate(DateTime dt) {
-    curDate = DateUtils.formatDateWithWeek(dt);
+    curDate = DateUtil.formatDateWithWeek(dt);
   }
 
   HotNewsStoriesModel.fromJson(Map<String, dynamic> json)

@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
         if (i != _dateTimeOffsetList.length - 1) {
           if (offset.round() >= _dateTimeOffsetList[i].round() &&
               _dateTimeOffsetList[i + 1].round() >= offset.round()) {
-            String dateTime = DateUtils.formatDateWithWeek(
+            String dateTime = DateUtil.formatDateWithWeek(
                 _dateTimeList[i].subtract(new Duration(days: 1)));
 
             if (dateTime != _title) {
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
         } else {
           if (offset.round() >= _dateTimeOffsetList[i].round() &&
               _dateTimeOffsetList[i].round() >= offset.round()) {
-            String dateTime = DateUtils.formatDateWithWeek(
+            String dateTime = DateUtil.formatDateWithWeek(
                 _dateTimeList[i].subtract(new Duration(days: 1)));
 
             if (dateTime != _title) {
@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
         if (i != _dateTimeOffsetList.length - 1) {
           if (offset.round() < _dateTimeOffsetList[i + 1].round() &&
               offset.round() > _dateTimeOffsetList[i].round()) {
-            String dateTime = DateUtils.formatDateWithWeek(_dateTimeList[i]);
+            String dateTime = DateUtil.formatDateWithWeek(_dateTimeList[i]);
 
             if (dateTime != _title) {
               setState(() {
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
         } else {
           if (offset.round() < _dateTimeOffsetList[i].round() &&
               offset.round() > _dateTimeOffsetList[i].round()) {
-            String dateTime = DateUtils.formatDateWithWeek(_dateTimeList[i]);
+            String dateTime = DateUtil.formatDateWithWeek(_dateTimeList[i]);
 
             if (dateTime != _title) {
               setState(() {
@@ -139,7 +139,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
 
     _curDateTime = new DateTime.now();
 
-    _curDate = DateUtils.formatDateSimple(_curDateTime);
+    _curDate = DateUtil.formatDateSimple(_curDateTime);
 
     _storiesPresenter.loadNews(null);
 
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
 
     _curDateTime = _curDateTime.subtract(new Duration(days: 1));
 
-    _curDate = DateUtils.formatDateSimple(_curDateTime);
+    _curDate = DateUtil.formatDateSimple(_curDateTime);
 
     _storiesPresenter.loadNews(_curDate);
 
@@ -248,7 +248,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
   Widget buildList(BuildContext context) {
     var content;
 
-    if (_normalDatas.isEmpty) {
+    if (null == _normalDatas || _normalDatas.isEmpty) {
       content = ProgressDialog.buildProgressDialog();
     } else {
       content = new ListView.builder(

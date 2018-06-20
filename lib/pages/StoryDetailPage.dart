@@ -109,10 +109,15 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
           size: 30.0,
           color: Colors.white,
         ),
-        new Icon(
-          Icons.sms,
-          size: 30.0,
-          color: Colors.white,
+        new InkWell(
+          onTap: (){
+            RouteUtil.route2Comment(context, widget.id);
+          },
+          child: new Icon(
+            Icons.message,
+            size: 30.0,
+            color: Colors.white,
+          ),
         ),
       ],
     );

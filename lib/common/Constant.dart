@@ -23,6 +23,8 @@ class Constant {
   //time
   static const int oneDay = 24 * 60 * 60;
 
+  //def headimg
 
+  static const String defHeadimg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb0V6OlKdbsP-45kue1bb3QsVF2vV6Ncm_Nw3OzSwdTmWstfzY';
 
 }

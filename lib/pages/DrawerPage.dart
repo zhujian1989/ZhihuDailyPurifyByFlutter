@@ -35,7 +35,7 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
   void initState() {
     super.initState();
 
-    //做个简单的缓存，这个列表不会出现经常发生变化
+    //由于每次进入drawer都会刷新，所以先做个简单的缓存，这个列表不会出现经常发生变化
     _themeList = CacheUtil.getInstance().getThemeListCache();
 
     if (null != _themeList && _themeList.isNotEmpty) {
