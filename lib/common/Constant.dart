@@ -17,6 +17,12 @@ class Constant {
 
   //SharedPreferences key
   static const String spThemeCache = 'sp_theme_cache';
+  static const String spThemeCacheHours = 'sp_theme_cache_hours';
+
+
+  //time
+  static const int oneDay = 24 * 60 * 60;
+
 
 
 }

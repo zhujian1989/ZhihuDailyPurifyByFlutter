@@ -19,7 +19,6 @@ class DioFactory {
 
   _init(){
     _dio = new Dio();
-    print(_dio);
   }
 
   getDio() {
