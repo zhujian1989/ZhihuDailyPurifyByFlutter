@@ -61,7 +61,7 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
     return completer.future;
   }
 
-  Widget buildList(BuildContext context) {
+  Widget _buildList(BuildContext context) {
     widgets.clear();
     if (null != _storyDetailModel && null != _storyDetailModel.image) {
       widgets.add(_buildBanner());
@@ -79,14 +79,6 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
           new ListView(
             children: widgets,
           ),
-          new Align(
-            alignment: Alignment.bottomLeft,
-            child: new Container(
-              color: Colors.grey[400],
-              height: 40.0,
-              child: _buildExtra(),
-            ),
-          )
         ],
       );
     }
@@ -190,7 +182,14 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
       appBar: new AppBar(
         title: new Text('$_title'),
       ),
-      body: new SafeArea(bottom: true, child: buildList(context)),
+      body: _buildList(context),
+      bottomNavigationBar: new BottomAppBar(
+        child: new Container(
+          color: Colors.grey[400],
+          height: 40.0,
+          child: _buildExtra(),
+        ),
+      ),
     );
   }
 

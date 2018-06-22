@@ -119,6 +119,8 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
           )),
     );
   }
+
+
   Widget _buildBody() {
     if (null != _themeList && _themeList.isNotEmpty) {
       return new Column(
@@ -136,7 +138,10 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
 
   @override
   Widget build(BuildContext context) {
-    return _buildBody();
+    return new Scaffold(
+      backgroundColor: Colors.white,
+      body: _buildBody(),
+    );
   }
 
   @override

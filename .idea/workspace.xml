@@ -6,8 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b29e7269-c9e4-42c0-8263-18d2b6c71276" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/CommentPage.dart" afterPath="$PROJECT_DIR$/lib/pages/CommentPage.dart" />
       <change beforePath="$PROJECT_DIR$/lib/pages/DrawerPage.dart" afterPath="$PROJECT_DIR$/lib/pages/DrawerPage.dart" />
       <change beforePath="$PROJECT_DIR$/lib/pages/StoryDetailPage.dart" afterPath="$PROJECT_DIR$/lib/pages/StoryDetailPage.dart" />
     </list>
@@ -24,54 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StoryDetailPage.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StoryDetailPage.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/pages/StoryDetailPage.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="71" column="16" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basic.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../flutter/packages/flutter/lib/src/widgets/basic.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="1409" column="8" lean-forward="false" selection-start-line="1409" selection-start-column="8" selection-end-line="1409" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StoryExtraModel.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/model/StoryExtraModel.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DrawerPage.dart" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/pages/DrawerPage.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="74" column="35" lean-forward="false" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="35" />
-              <folding>
-                <element signature="e#1473#1793#0" expanded="false" />
-                <element signature="e#2490#2858#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="safe_area.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../flutter/packages/flutter/lib/src/widgets/safe_area.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+            <state relative-caret-position="-195">
+              <caret line="81" column="10" lean-forward="true" selection-start-line="81" selection-start-column="10" selection-end-line="81" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -102,7 +57,6 @@
       <find>_buildOtherItem</find>
       <find>_localCollectThemes</find>
       <find>_initItems</find>
-      <find>_buildBody</find>
       <find>_refreshItems</find>
       <find>TODO:</find>
       <find>_themeList</find>
@@ -110,7 +64,6 @@
       <find>_lock</find>
       <find>_buildItem</find>
       <find>ed</find>
-      <find>buildList</find>
       <find>parse</find>
       <find>av</find>
       <find>fontWeight</find>
@@ -118,6 +71,8 @@
       <find>appbar</find>
       <find>_datas</find>
       <find>padding</find>
+      <find>_buildBody</find>
+      <find>buildList</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -413,7 +368,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17910448" sideWeight="0.5028612" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dart Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31094527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2636816" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35945272" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Flutter Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6069652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -427,7 +382,7 @@
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Flutter Inspector" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Flutter Inspector" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -519,11 +474,6 @@
           <url>file://$PROJECT_DIR$/lib/model/StoryDetailModel.dart</url>
           <line>38</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/pages/DrawerPage.dart</url>
-          <line>121</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="15" />
@@ -867,7 +817,7 @@
         <state relative-caret-position="290">
           <caret line="212" column="54" lean-forward="false" selection-start-line="212" selection-start-column="54" selection-end-line="212" selection-end-column="54" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
             <element signature="e#1017#1315#0" expanded="false" />
             <element signature="e#2990#3443#0" expanded="false" />
             <element signature="e#3481#3928#0" expanded="false" />
@@ -913,27 +863,29 @@
     <entry file="file://$PROJECT_DIR$/../flutter/packages/flutter/lib/src/widgets/basic.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
-          <caret line="1409" column="8" lean-forward="false" selection-start-line="1409" selection-start-column="8" selection-end-line="1409" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/StoryDetailPage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="71" column="16" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+          <caret line="1678" column="8" lean-forward="false" selection-start-line="1678" selection-start-column="8" selection-end-line="1678" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/DrawerPage.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="74" column="35" lean-forward="false" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="35" />
+        <state relative-caret-position="344">
+          <caret line="142" column="24" lean-forward="false" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="24" />
           <folding>
             <element signature="e#1473#1793#0" expanded="false" />
+            <element signature="e#1821#2445#0" expanded="false" />
             <element signature="e#2490#2858#0" expanded="false" />
+            <element signature="e#2922#3445#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/StoryDetailPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-195">
+          <caret line="81" column="10" lean-forward="true" selection-start-line="81" selection-start-column="10" selection-end-line="81" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
