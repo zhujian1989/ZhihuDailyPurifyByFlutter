@@ -6,12 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b29e7269-c9e4-42c0-8263-18d2b6c71276" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/screenshot/1.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/screenshot/2.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/screenshot/3.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/screenshot/4.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/screenshot/5.jpeg" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -31,8 +25,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="260">
-                <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <first_editor relative-caret-position="375">
+                <caret line="18" column="546" lean-forward="false" selection-start-line="18" selection-start-column="546" selection-end-line="18" selection-end-column="546" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -863,8 +857,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="260">
-            <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <first_editor relative-caret-position="375">
+            <caret line="18" column="546" lean-forward="false" selection-start-line="18" selection-start-column="546" selection-end-line="18" selection-end-column="546" />
             <folding />
           </first_editor>
           <second_editor />
