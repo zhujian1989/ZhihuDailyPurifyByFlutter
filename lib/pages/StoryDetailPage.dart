@@ -85,53 +85,59 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
     return content;
   }
 
-  Widget _buildExtra() {
-    return new Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        new Stack(
+  Widget _buildBottomBar() {
+
+    return new BottomAppBar(
+      child: new Container(
+        height: 40.0,
+        child: new Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            new Icon(
-              Icons.thumb_up,
-              size: 20.0,
-              color: Colors.white,
+            new Stack(
+              children: <Widget>[
+                new Icon(
+                  Icons.thumb_up,
+                  size: 20.0,
+                  color: Colors.grey,
+                ),
+                new Container(
+                  margin: const EdgeInsets.only(left: 24.0),
+                  child: new Text(
+                    0 == _like ? '' : ('$_like'),
+                    style: new TextStyle(fontSize: 12.0, color: Colors.grey),
+                  ),
+                )
+              ],
             ),
-            new Container(
-              margin: const EdgeInsets.only(left: 24.0),
-              child: new Text(
-                0 == _like ? '' : ('$_like'),
-                style: new TextStyle(fontSize: 12.0, color: Colors.white),
+            new Icon(
+              Icons.share,
+              size: 20.0,
+              color: Colors.grey,
+            ),
+            new InkWell(
+              onTap: () {
+                RouteUtil.route2Comment(context, widget.id);
+              },
+              child: new Stack(
+                children: <Widget>[
+                  new Icon(
+                    Icons.message,
+                    size: 20.0,
+                    color: Colors.grey,
+                  ),
+                  new Container(
+                    margin: const EdgeInsets.only(left: 24.0),
+                    child: new Text(
+                      0 == _commentsTotal ? '' : ('$_commentsTotal'),
+                      style: new TextStyle(fontSize: 12.0, color: Colors.grey),
+                    ),
+                  )
+                ],
               ),
-            )
+            ),
           ],
         ),
-        new Icon(
-          Icons.share,
-          size: 20.0,
-          color: Colors.white,
-        ),
-        new InkWell(
-          onTap: () {
-            RouteUtil.route2Comment(context, widget.id);
-          },
-          child: new Stack(
-            children: <Widget>[
-              new Icon(
-                Icons.message,
-                size: 20.0,
-                color: Colors.white,
-              ),
-              new Container(
-                margin: const EdgeInsets.only(left: 24.0),
-                child: new Text(
-                  0 == _commentsTotal ? '' : ('$_commentsTotal'),
-                  style: new TextStyle(fontSize: 12.0, color: Colors.white),
-                ),
-              )
-            ],
-          ),
-        ),
-      ],
+      ),
     );
   }
 
@@ -179,17 +185,12 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      backgroundColor: Colors.white,
       appBar: new AppBar(
         title: new Text('$_title'),
       ),
       body: _buildList(context),
-      bottomNavigationBar: new BottomAppBar(
-        child: new Container(
-          color: Colors.grey[400],
-          height: 40.0,
-          child: _buildExtra(),
-        ),
-      ),
+      bottomNavigationBar: _buildBottomBar(),
     );
   }
 

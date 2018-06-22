@@ -251,7 +251,7 @@ class _ThemeListPageState extends State<ThemeListPage>
     return widget;
   }
 
-  Widget buildList(BuildContext context) {
+  Widget _buildList(BuildContext context) {
     var content;
 
     if (_normalDatas.isEmpty) {
@@ -286,7 +286,7 @@ class _ThemeListPageState extends State<ThemeListPage>
       drawer: new Drawer(
         child: new DrawerPage(),
       ),
-      body: buildList(context),
+      body: _buildList(context),
     );
   }
 

@@ -237,7 +237,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
                   new Expanded(
                     child: new Align(
                       alignment: Alignment.bottomCenter,
-                      child: new Divider(height: 1.0),
+                      child: CommonDivider.buildDivider(),
                     ),
                   ),
                 ],
