@@ -12,6 +12,4 @@ abstract class StoriesView implements IView<StoriesPresenter>{
   void onLoadNewsSuc(BaseModel<HotNewsModel> model);
   void onLoadNewsFail();
 
-
-
 }

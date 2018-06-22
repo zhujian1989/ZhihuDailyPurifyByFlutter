@@ -1,4 +1,10 @@
 class CommentModel {
+
+  static const int normalCommentType = 0;
+  static const int longCommentType = 1;
+  static const int shortCommentType = 2;
+
+
   final String author;
   final String content;
   final String avatar;
@@ -9,14 +15,21 @@ class CommentModel {
 
   ReplyToModel replyTo;
 
-  CommentModel(
-      {this.avatar,
-      this.author,
-      this.content,
-      this.time,
-      this.replyToJson,
-      this.id,
-      this.likes,this.replyTo});
+  int itemType = normalCommentType;
+
+  CommentModel({this.avatar,
+    this.author,
+    this.content,
+    this.time,
+    this.replyToJson,
+    this.id,
+    this.likes,this.replyTo});
+
+
+  setItemType(int type) {
+    itemType = type;
+  }
+
 
   CommentModel.fromJson(Map<String, dynamic> json)
       : author = json['author'],
