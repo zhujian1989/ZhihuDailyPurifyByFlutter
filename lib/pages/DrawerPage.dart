@@ -101,6 +101,25 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
     );
   }
 
+  Widget _buildList(){
+    return new MediaQuery.removePadding(
+      context: context,
+      // DrawerHeader consumes top MediaQuery padding.
+      removeTop: true,
+      child: new Expanded(
+          child: new ListView(
+            children: <Widget>[
+              new Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: _themeList.map((ThemeModel model) {
+                  return _buildOtherItem(model);
+                }).toList(),
+              ),
+            ],
+          )),
+    );
+  }
   Widget _buildBody() {
     if (null != _themeList && _themeList.isNotEmpty) {
       return new Column(
@@ -108,23 +127,7 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
           _buildDrawer(),
           _buildHomeItem(),
           new Divider(height: 1.0),
-          new MediaQuery.removePadding(
-            context: context,
-            // DrawerHeader consumes top MediaQuery padding.
-            removeTop: true,
-            child: new Expanded(
-                child: new ListView(
-                  children: <Widget>[
-                    new Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: _themeList.map((ThemeModel model) {
-                        return _buildOtherItem(model);
-                      }).toList(),
-                    ),
-                  ],
-                )),
-          ),
+          _buildList()
         ],
       );
     } else {
