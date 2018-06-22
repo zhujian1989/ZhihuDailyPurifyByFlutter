@@ -11,6 +11,7 @@ import 'package:daily_purify/widget/CommonLoadingDialog.dart';
 import 'package:daily_purify/widget/CommonSnakeBar.dart';
 import 'package:flutter/material.dart';
 
+
 class Choice {
   const Choice({this.choiceName, this.choiceValue});
 
@@ -89,40 +90,24 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
     super.dispose();
   }
 
-  route2Pop(BuildContext context) {
-    Navigator.of(context).push(new PageRouteBuilder(
-        opaque: false,
-        pageBuilder: (BuildContext context, _, __) {
-          return _buildPop();
-        },
-        transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
-          return new FadeTransition(
-            opacity: animation,
-            child: new FadeTransition(
-              opacity:
-                  new Tween<double>(begin: 0.5, end: 1.0).animate(animation),
-              child: child,
-            ),
-          );
-        }));
-  }
-
-  Widget _buildPop() {
+  Widget _buildNormalItem(CommentModel item) {
     return new PopupMenuButton<Choice>(
-      onSelected: (choice) {
-        print(choice.choiceValue);
-      },
-      itemBuilder: (BuildContext context) {
-        return choices.map((Choice choice) {
-          return new PopupMenuItem<Choice>(
-            value: choice,
-            child: new Text(choice.choiceName),
-          );
-        }).toList();
-      },
+        padding: EdgeInsets.zero,
+        onSelected: (choice) {
+          print(choice.choiceName);
+        },
+        child: _buildContentItem(item),
+        itemBuilder: (BuildContext context) {
+          return choices.map((Choice choice) {
+            return new PopupMenuItem<Choice>(
+              value: choice,
+              child: new Text(choice.choiceName),
+            );
+          }).toList();
+        }
+
     );
   }
-
   Widget _buildItem(BuildContext context, int index) {
     final CommentModel item = _datas[index];
     Widget widget;
@@ -135,7 +120,7 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
         widget = _buildTotal('$_shortCommentsLength 条短评论');
         break;
       case CommentModel.normalCommentType:
-        widget = _buildNormal(item);
+        widget = _buildNormalItem(item);
         break;
     }
 
@@ -156,7 +141,7 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
      );
   }
 
-  Widget _buildNormal(CommentModel item){
+  Widget _buildContentItem(CommentModel item) {
       String time = DateUtil.formatDate(item.time * 1000);
       return new InkWell(
       child: new Padding(
@@ -178,8 +163,17 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
                 ),
                 new Expanded(
                     child: new Container(
-                      alignment: Alignment.topRight,
-                      child: new Text('👍（${item.likes}）'),
+                      child: new Align(
+                        alignment: Alignment.topRight,
+                        child: new Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                          new Icon(
+                            Icons.thumb_up, color: Colors.grey, size: 18.0,),
+                          new Text('(${item.likes})',
+                            style: new TextStyle(color: Colors.grey),)
+                        ],),
+                      ),
                     )),
               ],
             ),
@@ -208,7 +202,6 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
       ),
     );
   }
-
   Widget _buildReply(CommentModel item){
     ReplyToModel replyToModel  = item.replyTo;
 
@@ -230,7 +223,7 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
 
   }
 
-  Widget buildList(BuildContext context) {
+  Widget _buildList(BuildContext context) {
     var content;
 
     if (null == _datas || _datas.isEmpty) {
@@ -263,7 +256,7 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
         title: new Text("评论列表"),
         centerTitle: true,
       ), //头部的标题AppBar
-      body: buildList(context),
+      body: _buildList(context),
     );
   }
 
