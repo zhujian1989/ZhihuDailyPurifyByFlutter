@@ -13,7 +13,7 @@
 
 [我的简书地址有真机对比效果](https://www.jianshu.com/p/ee1539dc4e10)
 
-![dailypurify.gif](https://upload-images.jianshu.io/upload_images/2751425-14a30a7c557e99ad.gif?imageMogr2/auto-orient/strip)
+![dailypurify.gif](https://upload-images.jianshu.io/upload_images/2751425-14a30a7c557e99ad.gif?imageMogr2/auto-orient/strip)  
 
 
 <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/1.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/2.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/3.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/4.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/5.jpeg" width="200">  
@@ -30,9 +30,9 @@
 1.Flutter加载Html  
 2.主页banner自动轮播  
 3.drawer每次都是重新加载？
-4.刷新数据失败，增加重试按钮
-5.主页面UI优化（动画）
-6.文章详情UI（动画）
+4.刷新数据失败，增加重试按钮  
+5.主页面UI优化（动画）   
+6.文章详情UI（动画）  
 
 ## 由于Api有限无法完成跟用户相关的操作
 1.注册   
