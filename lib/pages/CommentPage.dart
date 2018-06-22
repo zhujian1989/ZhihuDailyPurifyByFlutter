@@ -48,9 +48,9 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
 
   List<CommentModel> _datas = [];
 
-  int _longCommentsLength;
+  int _longCommentsLength = 0;
 
-  int _shortCommentsLength;
+  int _shortCommentsLength = 0;
 
   _initData(){
     CommentModel longCommentType  = new CommentModel();
@@ -249,6 +249,8 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
       onRefresh: _refreshData,
       child: content,
     );
+
+
 
     return _refreshIndicator;
   }

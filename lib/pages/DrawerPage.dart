@@ -7,7 +7,6 @@ import 'package:daily_purify/model/BaseModel.dart';
 import 'package:daily_purify/model/ThemeModel.dart';
 import 'package:daily_purify/mvp/presenter/ThemePresenter.dart';
 import 'package:daily_purify/mvp/presenter/ThemePresenterImpl.dart';
-import 'package:daily_purify/widget/CommonDivider.dart';
 import 'package:daily_purify/widget/CommonLoadingDialog.dart';
 import 'package:daily_purify/widget/CommonSnakeBar.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +26,6 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
 
   ThemePresenter _themePresenter;
 
-  List<Widget> _themeWidgetList = [];
-
   List<ThemeModel> _themeList = [];
 
   @override
@@ -39,7 +36,6 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
     _themeList = CacheUtil.getInstance().getThemeListCache();
 
     if (null != _themeList && _themeList.isNotEmpty) {
-      _refreshItems();
       return;
     }
 
@@ -56,21 +52,6 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
     completer.complete(null);
 
     return completer.future;
-  }
-
-  _refreshItems() {
-    _themeWidgetList.clear();
-
-    _themeWidgetList.add(_buildDrawer());
-    _themeWidgetList.add(_buildHomeItem());
-    _themeWidgetList.add(CommonDivider.buildDivider());
-
-    for (ThemeModel model in _themeList) {
-      _themeWidgetList.add(_buildOtherItem(model));
-      _themeWidgetList.add(CommonDivider.buildDivider());
-    }
-
-    setState(() {});
   }
 
   Widget _buildDrawer() {
@@ -121,11 +102,30 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
   }
 
   Widget _buildBody() {
-    if (null != _themeWidgetList && _themeWidgetList.isNotEmpty) {
-      return new ListView(
-        padding: const EdgeInsets.only(),
-        //_themeWidgetList 是一个widget集合
-        children: _themeWidgetList,
+    if (null != _themeList && _themeList.isNotEmpty) {
+      return new Column(
+        children: <Widget>[
+          _buildDrawer(),
+          _buildHomeItem(),
+          new Divider(height: 1.0),
+          new MediaQuery.removePadding(
+            context: context,
+            // DrawerHeader consumes top MediaQuery padding.
+            removeTop: true,
+            child: new Expanded(
+                child: new ListView(
+                  children: <Widget>[
+                    new Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: _themeList.map((ThemeModel model) {
+                        return _buildOtherItem(model);
+                      }).toList(),
+                    ),
+                  ],
+                )),
+          ),
+        ],
       );
     } else {
       return ProgressDialog.buildProgressDialog();
@@ -153,8 +153,7 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
 
     CacheUtil.getInstance().setThemeListCache(_themeList);
 
-    //缓存
-    _refreshItems();
+    setState(() {});
   }
 
   @override

@@ -65,7 +65,6 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
     }
     widgets.add(_buildTips());
     widgets.add(_buildLink());
-
     var content;
 
     if (null == _storyDetailModel) {
