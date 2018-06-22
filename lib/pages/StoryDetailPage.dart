@@ -37,6 +37,10 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
 
   StoryExtraModel _storyExtraModel;
 
+  int _like = 0;
+
+  int _commentsTotal = 0;
+
   List<Widget> widgets = [];
 
   @override
@@ -58,13 +62,13 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
   }
 
   Widget buildList(BuildContext context) {
-
     widgets.clear();
     if (null != _storyDetailModel && null != _storyDetailModel.image) {
       widgets.add(_buildBanner());
     }
     widgets.add(_buildTips());
     widgets.add(_buildLink());
+
     var content;
 
     if (null == _storyDetailModel) {
@@ -78,7 +82,7 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
           new Align(
             alignment: Alignment.bottomLeft,
             child: new Container(
-              color: Colors.black,
+              color: Colors.grey[400],
               height: 40.0,
               child: _buildExtra(),
             ),
@@ -93,29 +97,46 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
     return new Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        new Icon(
-          Icons.keyboard_arrow_down,
-          color: Colors.white,
-          size: 30.0,
-        ),
-        new Icon(
-          Icons.star,
-          size: 30.0,
-          color: Colors.white,
+        new Stack(
+          children: <Widget>[
+            new Icon(
+              Icons.thumb_up,
+              size: 20.0,
+              color: Colors.white,
+            ),
+            new Container(
+              margin: const EdgeInsets.only(left: 24.0),
+              child: new Text(
+                0 == _like ? '' : ('$_like'),
+                style: new TextStyle(fontSize: 12.0, color: Colors.white),
+              ),
+            )
+          ],
         ),
         new Icon(
           Icons.share,
-          size: 30.0,
+          size: 20.0,
           color: Colors.white,
         ),
         new InkWell(
-          onTap: (){
+          onTap: () {
             RouteUtil.route2Comment(context, widget.id);
           },
-          child: new Icon(
-            Icons.message,
-            size: 30.0,
-            color: Colors.white,
+          child: new Stack(
+            children: <Widget>[
+              new Icon(
+                Icons.message,
+                size: 20.0,
+                color: Colors.white,
+              ),
+              new Container(
+                margin: const EdgeInsets.only(left: 24.0),
+                child: new Text(
+                  0 == _commentsTotal ? '' : ('$_commentsTotal'),
+                  style: new TextStyle(fontSize: 12.0, color: Colors.white),
+                ),
+              )
+            ],
           ),
         ),
       ],
@@ -169,7 +190,7 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
       appBar: new AppBar(
         title: new Text('$_title'),
       ),
-      body: buildList(context),
+      body: new SafeArea(bottom: true, child: buildList(context)),
     );
   }
 
@@ -212,6 +233,10 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
     }
 
     _storyExtraModel = model.data;
+
+    _commentsTotal = _storyExtraModel.comments;
+
+    _like = _storyExtraModel.popularity;
 
     setState(() {});
   }

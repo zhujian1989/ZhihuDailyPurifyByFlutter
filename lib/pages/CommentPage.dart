@@ -90,7 +90,7 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
     super.dispose();
   }
 
-  Widget _buildNormalItem(CommentModel item) {
+  Widget _buildPopItem(CommentModel item) {
     return new PopupMenuButton<Choice>(
         padding: EdgeInsets.zero,
         onSelected: (choice) {
@@ -120,7 +120,7 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
         widget = _buildTotal('$_shortCommentsLength 条短评论');
         break;
       case CommentModel.normalCommentType:
-        widget = _buildNormalItem(item);
+        widget = _buildPopItem(item);
         break;
     }
 
@@ -210,7 +210,7 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
         padding: const EdgeInsets.only(left:35.0,top: 12.0, bottom: 12.0),
         child: new Container(
             alignment: Alignment.topLeft,
-            child: new Text('//${replyToModel.author}：${replyToModel.content}',style: new TextStyle(fontSize: 14.0),),
+            child: new Text('${replyToModel.author} 回复：${replyToModel.content}',style: new TextStyle(fontSize: 14.0),),
 
         ),
       );

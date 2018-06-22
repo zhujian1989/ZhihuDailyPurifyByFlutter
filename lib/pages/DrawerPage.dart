@@ -72,8 +72,7 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
         RouteUtil.route2Home(context);
       },
       child: new Padding(
-          padding: const EdgeInsets.only(
-              left: 10.0, top: 10.0, right: 10.0, bottom: 10.0),
+          padding: const EdgeInsets.only(left: 10.0),
           child: new Row(
             children: <Widget>[
               new Icon(Icons.home, color: Colors.blue, size: 36.0),
