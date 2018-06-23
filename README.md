@@ -13,7 +13,7 @@
 
 [我的简书地址有真机对比效果](https://www.jianshu.com/p/ee1539dc4e10)
 
-![dailypurify.gif](https://upload-images.jianshu.io/upload_images/2751425-14a30a7c557e99ad.gif?imageMogr2/auto-orient/strip)  
+![homepage.gif](https://upload-images.jianshu.io/upload_images/2751425-4542d2bb163c169e.gif?imageMogr2/auto-orient/strip)
 
 
 <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/1.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/2.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/3.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/4.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/5.jpeg" width="200">  
@@ -24,7 +24,7 @@
 3.文章详情  
 4.抽屉列表增加缓存, 防止多次拉去数据  
 5.评论列表（UI,POP）
-6.文章详情UI（slivers）  
+6.主题列表
 7.主页banner自动轮播,手指滑动是禁止轮播，放开则继续  
 
 

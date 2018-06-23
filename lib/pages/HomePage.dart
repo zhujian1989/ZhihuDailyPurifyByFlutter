@@ -166,6 +166,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
     return completer.future;
   }
 
+  //根据type组装数据
   Widget _buildItem(BuildContext context, int index) {
     final HotNewsStoriesModel item = _normalDatas[index];
 
@@ -245,7 +246,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
             )));
   }
 
-  Widget buildList(BuildContext context) {
+  Widget _buildList(BuildContext context) {
     var content;
 
     if (null == _normalDatas || _normalDatas.isEmpty) {
@@ -299,13 +300,13 @@ class _HomePageState extends State<HomePage> implements StoriesView {
     return new Scaffold(
       backgroundColor: Colors.white,
       appBar: new AppBar(
-        title: new Text('$_title'),
-        centerTitle: true,
+        title: new Text('$_title'),//动态改变title
+        centerTitle: true, // 居中
       ), //头部的标题AppBar
       drawer: new Drawer(
         child: new DrawerPage(),
       ),
-      body: buildList(context),
+      body: _buildList(context),
     );
   }
 

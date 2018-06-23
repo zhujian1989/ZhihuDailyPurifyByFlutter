@@ -56,6 +56,7 @@ class _HomeBannerState extends State<HomeBanner> {
     _timer.cancel();
   }
 
+  //通过时间timer做轮询，达到自动播放的效果
   initTimer() {
     _timer = new Timer.periodic(_bannerDuration, (timer) {
       if(_isEndScroll){
@@ -87,10 +88,12 @@ class _HomeBannerState extends State<HomeBanner> {
 
   _changePage(int index) {
     _curPageIndex = index;
+    //获取指示器索引
     _curIndicatorsIndex = index % widget.topList.length;
     setState(() {});
   }
 
+  //创建指示器
   Widget _buildIndicators() {
     _initIndicators();
     return new Align(
@@ -113,6 +116,7 @@ class _HomeBannerState extends State<HomeBanner> {
 
   Widget _buildPagerView() {
     _initFakeList();
+    //检查手指和自动播放的是否冲突，如果滚动停止开启自动播放，反之停止自动播放
     return new NotificationListener(
         onNotification: (ScrollNotification scrollNotification) {
           if (scrollNotification is ScrollEndNotification || scrollNotification is UserScrollNotification) {
@@ -137,6 +141,7 @@ class _HomeBannerState extends State<HomeBanner> {
   Widget _buildBanner() {
     return new Container(
       height: widget._homeBannerHeight,
+      //指示器覆盖在pagerview上，所以用Stack
       child: new Stack(
         children: <Widget>[
           _buildPagerView(),
@@ -150,7 +155,7 @@ class _HomeBannerState extends State<HomeBanner> {
     HotNewsTopStoriesModel item = _fakeList[index];
     return new GestureDetector(
       onTap: () {
-        RouteUtil.route2Detail(context, '${item.id}');
+        RouteUtil.route2Detail(context, '${item.id}'); // 通过路由跳转到详情
       },
       child: new FadeInImage.memoryNetwork(
           placeholder: kTransparentImage,
