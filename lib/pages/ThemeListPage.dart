@@ -261,6 +261,7 @@ class _ThemeListPageState extends State<ThemeListPage>
 
   Widget _buildList(BuildContext context) {
     var content = new CustomScrollView(
+      physics: AlwaysScrollableScrollPhysics(),
       controller: _scrollController,
       slivers: <Widget>[
         new SliverAppBar(
