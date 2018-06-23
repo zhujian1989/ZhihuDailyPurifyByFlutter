@@ -9,7 +9,6 @@ import 'package:daily_purify/mvp/presenter/ThemeListPresenter.dart';
 import 'package:daily_purify/mvp/presenter/ThemeListPresenterImpl.dart';
 import 'package:daily_purify/pages/DrawerPage.dart';
 import 'package:daily_purify/widget/CommonDivider.dart';
-import 'package:daily_purify/widget/CommonLoadingDialog.dart';
 import 'package:daily_purify/widget/CommonSnakeBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
@@ -29,10 +28,19 @@ class ThemeListPage extends StatefulWidget {
   }
 }
 
+enum AppBarBehavior { normal, pinned, floating, snapping }
+
 class _ThemeListPageState extends State<ThemeListPage>
     implements ThemeListView {
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
       new GlobalKey<RefreshIndicatorState>();
+
+//  static final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<
+//      ScaffoldState>();
+
+  final double _appBarHeight = 256.0;
+
+  AppBarBehavior _appBarBehavior = AppBarBehavior.pinned;
 
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
 
@@ -45,6 +53,10 @@ class _ThemeListPageState extends State<ThemeListPage>
   List<ThemeListStoriesModel> _normalDatas = [];
 
   List<ThemeListEditorsModel> _editorDatas = [];
+
+  List<Widget> _widgets = [];
+
+  String _barBg = Constant.defBg;
 
   ThemeListModel _themeListModel;
 
@@ -97,13 +109,6 @@ class _ThemeListPageState extends State<ThemeListPage>
   void dispose() {
     super.dispose();
     _scrollController.removeListener(_scrollListener);
-  }
-
-  Widget _buildBanner() {
-    return new FadeInImage.memoryNetwork(
-        placeholder: kTransparentImage,
-        image: _themeListModel.image,
-        fit: BoxFit.fitWidth);
   }
 
   Widget _buildEditor() {
@@ -232,15 +237,10 @@ class _ThemeListPageState extends State<ThemeListPage>
     }
   }
 
-  Widget _buildItem(BuildContext context, int index) {
-    final ThemeListStoriesModel item = _normalDatas[index];
-
+  Widget _buildNewItem(ThemeListStoriesModel item) {
     Widget widget;
 
     switch (item.itemType) {
-      case ThemeListStoriesModel.itemTypeBanner:
-        widget = _buildBanner();
-        break;
       case ThemeListStoriesModel.itemTypeEditor:
         widget = _buildEditor();
         break;
@@ -251,20 +251,40 @@ class _ThemeListPageState extends State<ThemeListPage>
     return widget;
   }
 
-  Widget _buildList(BuildContext context) {
-    var content;
-
-    if (_normalDatas.isEmpty) {
-      content = ProgressDialog.buildProgressDialog();
-    } else {
-      content = new ListView.builder(
-        //设置physics属性总是可滚动
-        physics: AlwaysScrollableScrollPhysics(),
-        controller: _scrollController,
-        itemCount: _normalDatas.length,
-        itemBuilder: _buildItem,
-      );
+  _refreshItems() {
+    for (ThemeListStoriesModel model in _normalDatas) {
+      _widgets.add(_buildNewItem(model));
     }
+
+    setState(() {});
+  }
+
+  Widget _buildList(BuildContext context) {
+    var content = new CustomScrollView(
+      controller: _scrollController,
+      slivers: <Widget>[
+        new SliverAppBar(
+          expandedHeight: _appBarHeight,
+          pinned: _appBarBehavior == AppBarBehavior.pinned,
+          floating: _appBarBehavior == AppBarBehavior.floating ||
+              _appBarBehavior == AppBarBehavior.snapping,
+          snap: _appBarBehavior == AppBarBehavior.snapping,
+          flexibleSpace: new FlexibleSpaceBar(
+            title: Text('$_title'),
+            background: new FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                image: _barBg,
+                fit: BoxFit.fitHeight),
+          ),
+        ),
+        new SliverList(
+          delegate: new SliverChildListDelegate(
+              new List<Widget>.generate(_normalDatas.length, (int i) {
+            return _buildNewItem(_normalDatas[i]);
+          })),
+        ),
+      ],
+    );
 
     var _refreshIndicator = new RefreshIndicator(
       key: _refreshIndicatorKey,
@@ -278,11 +298,8 @@ class _ThemeListPageState extends State<ThemeListPage>
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+//      key: _scaffoldKey,
       backgroundColor: Colors.white,
-      appBar: new AppBar(
-        title: new Text('$_title'),
-        centerTitle: true,
-      ), //头部的标题AppBar
       drawer: new Drawer(
         child: new DrawerPage(),
       ),
@@ -302,7 +319,6 @@ class _ThemeListPageState extends State<ThemeListPage>
 
   @override
   void onLoadThemeListSuc(BaseModel<ThemeListModel> model) {
-
     if (!mounted) return; //异步处理，防止报错
 
     if (model.code != HttpStatus.OK) {
@@ -310,14 +326,17 @@ class _ThemeListPageState extends State<ThemeListPage>
       return;
     }
 
-    _themeListModel = model.data;
-
-    List<ThemeListStoriesModel> normalList = _themeListModel.stories;
-
     if (_isSlideUp) {
+      List<ThemeListStoriesModel> normalList = model.data.stories;
       _normalDatas.addAll(normalList);
     } else {
+      _themeListModel = model.data;
+      List<ThemeListStoriesModel> normalList = model.data.stories;
       List<ThemeListEditorsModel> editorList = _themeListModel.editors;
+
+      _themeListModel = model.data;
+
+      _barBg = _themeListModel.image;
 
       _title = _themeListModel.name;
 
@@ -326,6 +345,9 @@ class _ThemeListPageState extends State<ThemeListPage>
 
       _normalDatas = normalList;
       _editorDatas = editorList;
+
+      print('${_normalDatas.length}');
+
       _curStoryId = _normalDatas[0].id;
 
       if (null != _editorDatas && _editorDatas.isNotEmpty) {
@@ -334,13 +356,9 @@ class _ThemeListPageState extends State<ThemeListPage>
         _normalDatas.insert(0, fakeItem);
       }
 
-      if (null != _themeListModel.image) {
-        ThemeListStoriesModel fakeItem = new ThemeListStoriesModel();
-        fakeItem.setItemType(ThemeListStoriesModel.itemTypeBanner);
-        _normalDatas.insert(0, fakeItem);
-      }
+      print('${_normalDatas.length}');
     }
 
-    setState(() {});
+    _refreshItems();
   }
 }
