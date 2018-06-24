@@ -157,11 +157,19 @@ class _HomeBannerState extends State<HomeBanner> {
       onTap: () {
         RouteUtil.route2Detail(context, '${item.id}'); // 通过路由跳转到详情
       },
-      child: new FadeInImage.memoryNetwork(
-          placeholder: kTransparentImage,
-          image: item.image,
-          height: widget._homeBannerHeight,
-          fit: BoxFit.fitWidth),
+      child: new GestureDetector(
+        onTapDown: (donw) {
+          _isEndScroll = false;
+        },
+        onTapUp: (up) {
+          _isEndScroll = true;
+        },
+        child: new FadeInImage.memoryNetwork(
+            placeholder: kTransparentImage,
+            image: item.image,
+            height: widget._homeBannerHeight,
+            fit: BoxFit.fitWidth),
+      ),
     );
   }
 

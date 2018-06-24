@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
 
   DateTime _curDateTime;
 
-  bool _isShowRetry = true;
+  bool _isShowRetry = false;
 
   void _scrollListener() {
     _computeShowtTitle(_scrollController.offset);
