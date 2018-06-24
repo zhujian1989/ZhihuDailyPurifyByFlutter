@@ -238,6 +238,7 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
 
     _like = _storyExtraModel.popularity;
 
+
     setState(() {});
   }
 }

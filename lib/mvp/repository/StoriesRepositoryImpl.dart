@@ -40,7 +40,7 @@ Future<BaseModel<HotNewsModel>> _getNews(String date) async {
   try {
     Response response = await dio.get(url);
 
-    code = response.statusCode;
+    code = 200;
 
     if (response.statusCode == HttpStatus.OK) {
 

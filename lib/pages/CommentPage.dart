@@ -8,6 +8,7 @@ import 'package:daily_purify/model/CommentModel.dart';
 import 'package:daily_purify/mvp/presenter/CommentPresenter.dart';
 import 'package:daily_purify/mvp/presenter/CommentPresenterImpl.dart';
 import 'package:daily_purify/widget/CommonLoadingDialog.dart';
+import 'package:daily_purify/widget/CommonRetry.dart';
 import 'package:daily_purify/widget/CommonSnakeBar.dart';
 import 'package:flutter/material.dart';
 
@@ -53,6 +54,8 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
   int _longCommentsLength = 0;
 
   int _shortCommentsLength = 0;
+
+  bool _isShowRetry = true;
 
   _initData() {
     CommentModel longCommentType = new CommentModel();
@@ -241,7 +244,12 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
     var content;
 
     if (null == _datas || _datas.isEmpty) {
-      content = ProgressDialog.buildProgressDialog();
+      if (_isShowRetry) {
+        _isShowRetry = false;
+        content = CommonRetry.buildRetry(_refreshData);
+      } else {
+        content = ProgressDialog.buildProgressDialog();
+      }
     } else {
       content = new ListView.builder(
         //设置physics属性总是可滚动
@@ -311,7 +319,9 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
   }
 
   @override
-  void onLoadLongCommentsFail() {}
+  void onLoadLongCommentsFail() {
+    _isShowRetry = true;
+  }
 
   @override
   void onLoadLongCommentsSuc(BaseModel<List<CommentModel>> model) {
@@ -340,6 +350,7 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
     if (!mounted) return; //异步处理，防止报错
 
     if (model.code != HttpStatus.OK) {
+      _isShowRetry = true;
       CommonSnakeBar.buildSnakeBarByKey(
           _scaffoldStateKey, context, model.errorMsg);
       return;

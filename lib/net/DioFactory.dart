@@ -22,7 +22,6 @@ class DioFactory {
   }
 
   getDio() {
-    print(_dio);
     return _dio;
   }
 }

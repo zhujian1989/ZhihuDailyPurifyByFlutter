@@ -8,6 +8,7 @@ import 'package:daily_purify/model/ThemeModel.dart';
 import 'package:daily_purify/mvp/presenter/ThemePresenter.dart';
 import 'package:daily_purify/mvp/presenter/ThemePresenterImpl.dart';
 import 'package:daily_purify/widget/CommonLoadingDialog.dart';
+import 'package:daily_purify/widget/CommonRetry.dart';
 import 'package:daily_purify/widget/CommonSnakeBar.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,8 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
   ThemePresenter _themePresenter;
 
   List<ThemeModel> _themeList = [];
+
+  bool _isShowRetry = false;
 
   @override
   void initState() {
@@ -132,7 +135,17 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
         ],
       );
     } else {
-      return ProgressDialog.buildProgressDialog();
+
+      var content ;
+
+      if (_isShowRetry) {
+        _isShowRetry = false;
+        content = CommonRetry.buildRetry(_loadData);
+      } else {
+        content = ProgressDialog.buildProgressDialog();
+      }
+
+      return content;
     }
   }
 
@@ -146,13 +159,13 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
 
   @override
   void onLoadThemesFail() {
-    // TODO: implement  qwonLoadThemesFail
+    _isShowRetry = true;
   }
 
   @override
   void onLoadThemesSuc(BaseModel<List<ThemeModel>> model) {
     if (model.code != HttpStatus.OK) {
-      CommonSnakeBar.buildSnakeBar(context, model.errorMsg);
+      _isShowRetry = true;
       return;
     }
 

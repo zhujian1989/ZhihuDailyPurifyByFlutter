@@ -10,11 +10,10 @@ import 'package:daily_purify/mvp/presenter/StoriesPresenter.dart';
 import 'package:daily_purify/mvp/presenter/StoriesPresenterImpl.dart';
 import 'package:daily_purify/pages/DrawerPage.dart';
 import 'package:daily_purify/widget/CommonDivider.dart';
-import 'package:daily_purify/widget/CommonSnakeBar.dart';
-import 'package:daily_purify/widget/HomeBanner.dart';
 import 'package:daily_purify/widget/CommonLoadingDialog.dart';
+import 'package:daily_purify/widget/CommonRetry.dart';
+import 'package:daily_purify/widget/HomeBanner.dart';
 import 'package:flutter/material.dart';
-
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -29,9 +28,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> implements StoriesView {
-
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
-  new GlobalKey<RefreshIndicatorState>();
+      new GlobalKey<RefreshIndicatorState>();
 
   String _title = Constant.todayHot;
 
@@ -52,6 +50,8 @@ class _HomePageState extends State<HomePage> implements StoriesView {
   String _curDate;
 
   DateTime _curDateTime;
+
+  bool _isShowRetry = true;
 
   void _scrollListener() {
     _computeShowtTitle(_scrollController.offset);
@@ -250,7 +250,12 @@ class _HomePageState extends State<HomePage> implements StoriesView {
     var content;
 
     if (null == _normalDatas || _normalDatas.isEmpty) {
-      content = ProgressDialog.buildProgressDialog();
+      if (_isShowRetry) {
+        _isShowRetry = false;
+        content = CommonRetry.buildRetry(_refreshData);
+      } else {
+        content = ProgressDialog.buildProgressDialog();
+      }
     } else {
       content = new ListView.builder(
         //设置physics属性总是可滚动
@@ -300,7 +305,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
     return new Scaffold(
       backgroundColor: Colors.white,
       appBar: new AppBar(
-        title: new Text('$_title'),//动态改变title
+        title: new Text('$_title'), //动态改变title
         centerTitle: true, // 居中
       ), //头部的标题AppBar
       drawer: new Drawer(
@@ -312,17 +317,21 @@ class _HomePageState extends State<HomePage> implements StoriesView {
 
   @override
   void onLoadNewsFail() {
-    //todo
+    if (!_isSlideUp) {
+      _isShowRetry = true;
+      setState(() {});
+    }
   }
 
   @override
   void onLoadNewsSuc(BaseModel<HotNewsModel> model) {
-
     if (!mounted) return; //异步处理，防止报错
 
-
     if (model.code != HttpStatus.OK) {
-      CommonSnakeBar.buildSnakeBar(context, model.errorMsg);
+      if (!_isSlideUp) {
+        _isShowRetry = true;
+        setState(() {});
+      }
       return;
     }
 
