@@ -112,7 +112,10 @@ class _ThemeListPageState extends State<ThemeListPage>
   }
 
   Widget _buildEditor() {
+    //横向控件的集合
     List<Widget> editors = [];
+
+    //主编
     Widget lableWidget = new Padding(
       padding: const EdgeInsets.only(right: 12.0),
       child: new Text(
@@ -122,6 +125,8 @@ class _ThemeListPageState extends State<ThemeListPage>
     );
 
     editors.add(lableWidget);
+
+    //循环加入主编的头像
     for (ThemeListEditorsModel model in _editorDatas) {
       Widget headView = new InkWell(
         onTap: () {
@@ -138,6 +143,7 @@ class _ThemeListPageState extends State<ThemeListPage>
       editors.add(headView);
     }
 
+    //组装
     return new Column(
       children: <Widget>[
         new Padding(
@@ -261,6 +267,7 @@ class _ThemeListPageState extends State<ThemeListPage>
 
   Widget _buildList(BuildContext context) {
     var content = new CustomScrollView(
+      //没有铺满也可以滑动
       physics: AlwaysScrollableScrollPhysics(),
       controller: _scrollController,
       slivers: <Widget>[
@@ -271,7 +278,9 @@ class _ThemeListPageState extends State<ThemeListPage>
               _appBarBehavior == AppBarBehavior.snapping,
           snap: _appBarBehavior == AppBarBehavior.snapping,
           flexibleSpace: new FlexibleSpaceBar(
+            //标题
             title: Text('$_title'),
+            //背景图
             background: new FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
                 image: _barBg,
