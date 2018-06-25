@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:daily_purify/common/Constant.dart';
-import 'package:daily_purify/model/BaseModel.dart';
-import 'package:daily_purify/model/StoryDetailModel.dart';
-import 'package:daily_purify/model/StoryExtraModel.dart';
-import 'package:daily_purify/mvp/repository/StoryDetailRepository.dart';
-import 'package:daily_purify/net/Apis.dart';
-import 'package:daily_purify/net/DioFactory.dart';
+import 'package:daily_purify/common/constant.dart';
+import 'package:daily_purify/model/base_model.dart';
+import 'package:daily_purify/model/story_detail_model.dart';
+import 'package:daily_purify/model/story_extra_model.dart';
+import 'package:daily_purify/mvp/repository/story_detail_repository.dart';
+import 'package:daily_purify/net/apis.dart';
+import 'package:daily_purify/net/dio_factory.dart';
 import 'package:dio/dio.dart';
 
 class StoryDetailRepositoryImpl implements StoryDetailRepository {

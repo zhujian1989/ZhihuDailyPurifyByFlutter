@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:daily_purify/model/CommentModel.dart';
-import 'package:daily_purify/model/HotNewsModel.dart';
-import 'package:daily_purify/model/BaseModel.dart';
+import 'package:daily_purify/model/comment_model.dart';
+import 'package:daily_purify/model/hot_news_model.dart';
+import 'package:daily_purify/model/base_model.dart';
 
 abstract class CommentRepository {
 

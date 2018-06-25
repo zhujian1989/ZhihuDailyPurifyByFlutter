@@ -1,6 +1,6 @@
-import 'package:daily_purify/mvp/presenter/ThemeListPresenter.dart';
-import 'package:daily_purify/mvp/repository/ThemeListRepository.dart';
-import 'package:daily_purify/mvp/repository/ThemeListRepositoryImpl.dart';
+import 'package:daily_purify/mvp/presenter/theme_list_presenter.dart';
+import 'package:daily_purify/mvp/repository/theme_list_repository.dart';
+import 'package:daily_purify/mvp/repository/theme_list_repository_impl.dart';
 
 class ThemeListPresenterImpl implements ThemeListPresenter {
 

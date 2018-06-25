@@ -1,6 +1,6 @@
-import 'package:daily_purify/model/BaseModel.dart';
-import 'package:daily_purify/model/CommentModel.dart';
-import 'package:daily_purify/mvp/Mvp.dart';
+import 'package:daily_purify/model/base_model.dart';
+import 'package:daily_purify/model/comment_model.dart';
+import 'package:daily_purify/mvp/mvp.dart';
 
 abstract class CommentPresenter implements IPresenter {
   loadLongComments(String id);

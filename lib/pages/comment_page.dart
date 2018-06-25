@@ -1,15 +1,15 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:daily_purify/Utils/DateUtil.dart';
-import 'package:daily_purify/common/Constant.dart';
-import 'package:daily_purify/model/BaseModel.dart';
-import 'package:daily_purify/model/CommentModel.dart';
-import 'package:daily_purify/mvp/presenter/CommentPresenter.dart';
-import 'package:daily_purify/mvp/presenter/CommentPresenterImpl.dart';
-import 'package:daily_purify/widget/CommonLoadingDialog.dart';
-import 'package:daily_purify/widget/CommonRetry.dart';
-import 'package:daily_purify/widget/CommonSnakeBar.dart';
+import 'package:daily_purify/Utils/date_util.dart';
+import 'package:daily_purify/common/constant.dart';
+import 'package:daily_purify/model/base_model.dart';
+import 'package:daily_purify/model/comment_model.dart';
+import 'package:daily_purify/mvp/presenter/comment_presenter.dart';
+import 'package:daily_purify/mvp/presenter/comment_presenter_impl.dart';
+import 'package:daily_purify/widget/common_loading_dialog.dart';
+import 'package:daily_purify/widget/common_retry.dart';
+import 'package:daily_purify/widget/common_snakeBar.dart';
 import 'package:flutter/material.dart';
 
 class Choice {

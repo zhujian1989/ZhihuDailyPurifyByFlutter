@@ -1,6 +1,6 @@
-import 'package:daily_purify/mvp/presenter/StoriesPresenter.dart';
-import 'package:daily_purify/mvp/repository/StoriesRepository.dart';
-import 'package:daily_purify/mvp/repository/StoriesRepositoryImpl.dart';
+import 'package:daily_purify/mvp/presenter/stories_presenter.dart';
+import 'package:daily_purify/mvp/repository/stories_repository.dart';
+import 'package:daily_purify/mvp/repository/stories_repository_impl.dart';
 
 class StoriesPresenterImpl implements StoriesPresenter {
 

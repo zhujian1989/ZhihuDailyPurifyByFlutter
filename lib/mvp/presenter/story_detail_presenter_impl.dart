@@ -1,6 +1,6 @@
-import 'package:daily_purify/mvp/presenter/StoryDetailPresenter.dart';
-import 'package:daily_purify/mvp/repository/StoryDetailRepository.dart';
-import 'package:daily_purify/mvp/repository/StoryDetailRepositoryImpl.dart';
+import 'package:daily_purify/mvp/presenter/story_detail_presenter.dart';
+import 'package:daily_purify/mvp/repository/story_detail_repository.dart';
+import 'package:daily_purify/mvp/repository/story_detail_repository_impl.dart';
 
 class StoryDetailPresenterImpl implements StoryDetailPresenter {
 

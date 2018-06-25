@@ -1,11 +1,11 @@
 
-import 'package:daily_purify/pages/CommentPage.dart';
+import 'package:daily_purify/pages/comment_page.dart';
 import 'package:flutter/material.dart';
-import 'package:daily_purify/widget/CommonWebView.dart';
-import 'package:daily_purify/Utils/FixUrlUtil.dart';
-import 'package:daily_purify/pages/StoryDetailPage.dart';
-import 'package:daily_purify/pages/HomePage.dart';
-import 'package:daily_purify/pages/ThemeListPage.dart';
+import 'package:daily_purify/widget/common_webview.dart';
+import 'package:daily_purify/Utils/fix_url_util.dart';
+import 'package:daily_purify/pages/story_detail_page.dart';
+import 'package:daily_purify/pages/home_page.dart';
+import 'package:daily_purify/pages/theme_list_page.dart';
 
 class RouteUtil{
 

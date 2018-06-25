@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:daily_purify/model/StoryDetailModel.dart';
-import 'package:daily_purify/model/BaseModel.dart';
-import 'package:daily_purify/model/StoryExtraModel.dart';
+import 'package:daily_purify/model/story_detail_model.dart';
+import 'package:daily_purify/model/base_model.dart';
+import 'package:daily_purify/model/story_extra_model.dart';
 
 abstract class StoryDetailRepository {
 

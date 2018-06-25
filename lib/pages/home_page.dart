@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:daily_purify/Utils/DateUtil.dart';
-import 'package:daily_purify/Utils/RouteUtil.dart';
-import 'package:daily_purify/common/Constant.dart';
-import 'package:daily_purify/model/BaseModel.dart';
-import 'package:daily_purify/model/HotNewsModel.dart';
-import 'package:daily_purify/mvp/presenter/StoriesPresenter.dart';
-import 'package:daily_purify/mvp/presenter/StoriesPresenterImpl.dart';
-import 'package:daily_purify/pages/DrawerPage.dart';
-import 'package:daily_purify/widget/CommonDivider.dart';
-import 'package:daily_purify/widget/CommonLoadingDialog.dart';
-import 'package:daily_purify/widget/CommonRetry.dart';
-import 'package:daily_purify/widget/HomeBanner.dart';
+import 'package:daily_purify/Utils/date_util.dart';
+import 'package:daily_purify/Utils/route_util.dart';
+import 'package:daily_purify/common/constant.dart';
+import 'package:daily_purify/model/base_model.dart';
+import 'package:daily_purify/model/hot_news_model.dart';
+import 'package:daily_purify/mvp/presenter/stories_presenter.dart';
+import 'package:daily_purify/mvp/presenter/stories_presenter_impl.dart';
+import 'package:daily_purify/pages/drawer_page.dart';
+import 'package:daily_purify/widget/common_divider.dart';
+import 'package:daily_purify/widget/common_loading_dialog.dart';
+import 'package:daily_purify/widget/common_retry.dart';
+import 'package:daily_purify/widget/home_banner.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

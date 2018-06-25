@@ -1,6 +1,6 @@
-import 'package:daily_purify/mvp/presenter/ThemePresenter.dart';
-import 'package:daily_purify/mvp/repository/ThemeRepository.dart';
-import 'package:daily_purify/mvp/repository/ThemeRepositoryImpl.dart';
+import 'package:daily_purify/mvp/presenter/theme_presenter.dart';
+import 'package:daily_purify/mvp/repository/theme_repository.dart';
+import 'package:daily_purify/mvp/repository/theme_repository_impl.dart';
 
 class ThemePresenterImpl implements ThemePresenter {
   ThemeView _view;

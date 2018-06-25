@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:daily_purify/pages/HomePage.dart';
-import 'package:daily_purify/common/RoutesName.dart';
+import 'package:daily_purify/pages/home_page.dart';
+import 'package:daily_purify/common/routes_name.dart';
 void main() {
   runApp(new MaterialApp(
       routes: <String, WidgetBuilder>{

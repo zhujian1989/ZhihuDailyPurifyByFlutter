@@ -1,6 +1,6 @@
-import 'package:daily_purify/mvp/presenter/CommentPresenter.dart';
-import 'package:daily_purify/mvp/repository/CommentRepository.dart';
-import 'package:daily_purify/mvp/repository/CommentRepositoryImpl.dart';
+import 'package:daily_purify/mvp/presenter/comment_presenter.dart';
+import 'package:daily_purify/mvp/repository/comment_repository.dart';
+import 'package:daily_purify/mvp/repository/comment_repository_impl.dart';
 
 class CommentPresenterImpl implements CommentPresenter {
   CommentView _view;

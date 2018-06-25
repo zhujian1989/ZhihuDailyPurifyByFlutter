@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:daily_purify/Utils/RouteUtil.dart';
-import 'package:daily_purify/model/HotNewsModel.dart';
+import 'package:daily_purify/Utils/route_util.dart';
+import 'package:daily_purify/model/hot_news_model.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 

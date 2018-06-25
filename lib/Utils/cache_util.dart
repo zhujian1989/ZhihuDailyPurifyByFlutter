@@ -1,4 +1,4 @@
-import 'package:daily_purify/model/ThemeModel.dart';
+import 'package:daily_purify/model/theme_model.dart';
 
 class CacheUtil {
 
