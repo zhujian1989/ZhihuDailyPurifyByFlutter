@@ -24,7 +24,7 @@
 
 <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/1.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/2.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/3.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/4.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/5.jpeg" width="200"> 
 <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/6.jpeg" width="200">   
-
+<img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/7.jpeg" width="200"> 
 ## 完成
 1.今日热点  
 2.主题分类  
@@ -34,6 +34,7 @@
 6.主题列表 (界面，动画优化)  
 7.主页banner自动轮播,手指滑动是禁止轮播，放开则继续  
 8.刷新数据失败，增加重试按钮  
+9.分享UI  
 
 
 ## 待优化

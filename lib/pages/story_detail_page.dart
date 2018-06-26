@@ -12,6 +12,7 @@ import 'package:daily_purify/widget/common_loading_dialog.dart';
 import 'package:daily_purify/widget/common_snakeBar.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:daily_purify/widget/common_share.dart';
 
 class StoryDetailAppPage extends StatefulWidget {
   final String id;
@@ -85,8 +86,11 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
     return content;
   }
 
-  Widget _buildBottomBar() {
+  _showBottomPop(BuildContext context) {
+    CommonShare.buildShareBottomPop(context);
+  }
 
+  Widget _buildBottomBar() {
     return new BottomAppBar(
       child: new Container(
         height: 40.0,
@@ -109,10 +113,15 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
                 )
               ],
             ),
-            new Icon(
-              Icons.share,
-              size: 20.0,
-              color: Colors.grey,
+            new InkWell(
+              onTap: () {
+                _showBottomPop(context);
+              },
+              child: new Icon(
+                Icons.share,
+                size: 20.0,
+                color: Colors.grey,
+              ),
             ),
             new InkWell(
               onTap: () {
@@ -237,7 +246,6 @@ class _StoryDetailAppPageState extends State<StoryDetailAppPage>
     _commentsTotal = _storyExtraModel.comments;
 
     _like = _storyExtraModel.popularity;
-
 
     setState(() {});
   }
