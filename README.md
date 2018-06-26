@@ -7,9 +7,10 @@
 
 若被告知需停止共享与使用，本人会及时删除整个项目。
   
+[fir_release包下载地址,蜜汁流畅的体验](https://fir.im/mrkg)
 
 
-##效果图(gif，png，mp4)  
+## 效果图(gif，png，mp4) 
 
 [真机对比效果](https://www.jianshu.com/p/ee1539dc4e10)
 

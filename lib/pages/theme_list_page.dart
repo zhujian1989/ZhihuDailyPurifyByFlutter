@@ -280,6 +280,7 @@ class _ThemeListPageState extends State<ThemeListPage>
           flexibleSpace: new FlexibleSpaceBar(
             //标题
             title: Text('$_title'),
+            centerTitle: true,
             //背景图
             background: new FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
