@@ -51,6 +51,10 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
 
   List<CommentModel> _datas = [];
 
+  List<CommentModel> _shortComments = [];
+
+  List<CommentModel> _longComments = [];
+
   int _longCommentsLength = 0;
 
   int _shortCommentsLength = 0;
@@ -60,9 +64,23 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
   _initData() {
     CommentModel longCommentType = new CommentModel();
     longCommentType.setItemType(CommentModel.longCommentType);
+
+    print('item:${longCommentType.itemType}');
+
+    CommentModel longCommentNullType = new CommentModel();
+    longCommentNullType.setItemType(CommentModel.longCommentNullType);
+
+    print('item:${longCommentNullType.itemType}');
+
     CommentModel shortCommentType = new CommentModel();
     shortCommentType.setItemType(CommentModel.shortCommentType);
+
+    print('item:${shortCommentType.itemType}');
+
     _datas.add(longCommentType);
+
+    _datas.add(longCommentNullType);
+
     _datas.add(shortCommentType);
   }
 
@@ -93,6 +111,34 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
     super.dispose();
   }
 
+  Widget _buildNull() {
+    return new Container(
+      color: Colors.grey[100],
+      height: 300.0,
+      child: new Center(
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Icon(
+              Icons.desktop_mac,
+              color: Colors.blue[200],
+              size: 100.0,
+            ),
+            new Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: new Text(
+                '深度长评虚位以待',
+                style: new TextStyle(
+                  color: Colors.blue[400],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _buildPopItem(CommentModel item) {
     return new PopupMenuButton<Choice>(
         padding: EdgeInsets.zero,
@@ -110,6 +156,18 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
         });
   }
 
+  Widget _buildExpansionTileForShort() {
+    return new ExpansionTile(
+      title: new Text('$_shortCommentsLength 条短评论', style: new TextStyle(
+          fontSize: 16.0,
+          fontWeight: FontWeight.w500,
+          color: Colors.black)),
+      children: _shortComments.map((CommentModel model) {
+        return _buildPopItem(model);
+      }).toList(),
+    );
+  }
+
   Widget _buildItem(BuildContext context, int index) {
     final CommentModel item = _datas[index];
     Widget widget;
@@ -118,11 +176,18 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
       case CommentModel.longCommentType:
         widget = _buildTotal('$_longCommentsLength 条长评论');
         break;
-      case CommentModel.shortCommentType:
-        widget = _buildTotal('$_shortCommentsLength 条短评论');
-        break;
       case CommentModel.normalCommentType:
         widget = _buildPopItem(item);
+        break;
+      case CommentModel.longCommentNullType:
+        widget = _buildNull();
+        break;
+      case CommentModel.shortCommentType:
+        if (_shortComments != null && _shortComments.isNotEmpty) {
+          widget = _buildExpansionTileForShort();
+        } else {
+          widget = _buildTotal('$_shortCommentsLength 条短评论');
+        }
         break;
     }
 
@@ -168,8 +233,11 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
                 new Padding(
                   padding: const EdgeInsets.only(left: 12.0, right: 12.0),
                   child: new Text('${item.author}',
-                      style:
-                          new TextStyle(fontSize: 16.0, color: Colors.black)),
+                      style: new TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      )),
                 ),
                 new Expanded(
                     child: new Container(
@@ -195,12 +263,11 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
             ),
             new Padding(
               padding:
-                  const EdgeInsets.only(left: 35.0, top: 12.0, bottom: 12.0),
+                  const EdgeInsets.only(left: 35.0, top: 4.0, bottom: 10.0),
               child: new Container(
                 alignment: Alignment.topLeft,
                 child: new Text('${item.content}',
-                    style:
-                        new TextStyle(fontSize: 14.0, color: Colors.grey[800])),
+                    style: new TextStyle(fontSize: 14.0, color: Colors.black)),
               ),
             ),
             _buildReply(item),
@@ -223,12 +290,25 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
 
     if (null != replyToModel) {
       return new Padding(
-        padding: const EdgeInsets.only(left: 35.0, top: 12.0, bottom: 12.0),
+        padding: const EdgeInsets.only(left: 35.0, bottom: 12.0),
         child: new Container(
           alignment: Alignment.topLeft,
-          child: new Text(
-            '${replyToModel.author} 回复：${replyToModel.content}',
-            style: new TextStyle(fontSize: 14.0),
+          child: new Text.rich(
+            new TextSpan(
+                text: '//${replyToModel.author}：',
+                style: new TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400),
+                children: [
+                  new TextSpan(
+                      text: '${replyToModel.content}',
+                      style: new TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.grey[600],
+                        fontWeight: FontWeight.w400,
+                      ))
+                ]),
           ),
         ),
       );
@@ -272,7 +352,8 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
     return new BottomAppBar(
       child: new InkWell(
         onTap: () {
-          CommonSnakeBar.buildSnakeBarByKey(_scaffoldStateKey, context, '该功能暂时无法完成');
+          CommonSnakeBar.buildSnakeBarByKey(
+              _scaffoldStateKey, context, '该功能暂时无法完成');
         },
         child: new Container(
           height: 40.0,
@@ -333,9 +414,14 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
       return;
     }
 
-    _longCommentsLength = model.data.length;
+    _longComments = model.data;
 
-    _datas.insertAll(1, model.data);
+    _longCommentsLength = _longComments.length;
+
+    if (0 != _longCommentsLength) {
+      _datas.removeAt(1);
+      _datas.insertAll(1, model.data);
+    }
 
     setState(() {});
   }
@@ -356,9 +442,9 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
       return;
     }
 
-    _shortCommentsLength = model.data.length;
+    _shortComments = model.data;
 
-    _datas.addAll(model.data);
+    _shortCommentsLength = _shortComments.length;
 
     setState(() {});
   }

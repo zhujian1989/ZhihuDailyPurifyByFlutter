@@ -3,6 +3,7 @@ class CommentModel {
   static const int normalCommentType = 0;
   static const int longCommentType = 1;
   static const int shortCommentType = 2;
+  static const int longCommentNullType = -1;
 
 
   final String author;
