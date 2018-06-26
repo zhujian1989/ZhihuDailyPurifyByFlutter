@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b29e7269-c9e4-42c0-8263-18d2b6c71276" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/screenshot/5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/screenshot/6.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
@@ -34,8 +32,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="406">
-                <caret line="22" column="125" lean-forward="false" selection-start-line="22" selection-start-column="125" selection-end-line="22" selection-end-column="125" />
+              <first_editor relative-caret-position="481">
+                <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -1017,8 +1015,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="406">
-            <caret line="22" column="125" lean-forward="false" selection-start-line="22" selection-start-column="125" selection-end-line="22" selection-end-column="125" />
+          <first_editor relative-caret-position="481">
+            <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
             <folding />
           </first_editor>
           <second_editor />

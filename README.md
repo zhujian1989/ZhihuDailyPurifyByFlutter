@@ -9,19 +9,15 @@
   
 
 
-###效果图  
+###效果图(gif，png，mp4) 
 
-[我的简书地址有真机对比效果](https://www.jianshu.com/p/ee1539dc4e10)
+[真机对比效果](https://www.jianshu.com/p/ee1539dc4e10)
 
+[HOME_PAGE_GIF](https://www.jianshu.com/p/6f342031c0a4)
 
+[THEME_LIST_PAGE_GIF](https://www.jianshu.com/p/265fd0fa6762)
 
-![homepage.gif](https://upload-images.jianshu.io/upload_images/2751425-4542d2bb163c169e.gif?imageMogr2/auto-orient/strip)
-
-![ThemeListPage.gif](https://upload-images.jianshu.io/upload_images/2751425-3bc7538a8fadf4cf.gif?imageMogr2/auto-orient/strip)
-
-
-![comment_page.gif](https://upload-images.jianshu.io/upload_images/2751425-2bda0b027e8a0810.gif?imageMogr2/auto-orient/strip)
-
+[COMMENT_LIST_PAGE_GIF](https://www.jianshu.com/p/34953e28676f)
 
 
 <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/1.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/2.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/3.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/4.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/5.png" width="200"> 
