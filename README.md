@@ -21,8 +21,8 @@
 [COMMENT_LIST_PAGE_GIF](https://www.jianshu.com/p/34953e28676f)
 
 
-<img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/1.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/2.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/3.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/4.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/5.png" width="200"> 
-<img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/6.png" width="200">   
+<img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/1.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/2.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/3.jpeg" width="200"> <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/4.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/5.jpeg" width="200"> 
+<img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/6.jpeg" width="200">   
 
 ## 完成
 1.今日热点  
