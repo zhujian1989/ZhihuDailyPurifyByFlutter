@@ -19,6 +19,8 @@
 
 [COMMENT_LIST_PAGE_GIF](https://www.jianshu.com/p/34953e28676f)
 
+[LOGING_PAGE_GIF](https://www.jianshu.com/p/f7a9b8c84d26)
+
 
 <img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/1.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/2.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/3.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/4.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/5.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/6.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/7.jpeg" width="200"><img src="https://github.com/zhujian1989/ZhihuDailyPurifyByFlutter/blob/master/screenshot/8.jpeg" width="200">  
 
