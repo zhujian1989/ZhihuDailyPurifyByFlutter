@@ -245,7 +245,7 @@ class _LoginPageState extends State<LoginPage> {
           },
           child: new Padding(
               padding: const EdgeInsets.only(
-                  left: 24.0, top: 140.0, bottom: 12.0, right: 24.0),
+                  left: 24.0, top: 60.0, bottom: 12.0, right: 24.0),
               child: new Image.asset(
                 m.icon,
                 width: 60.0,
@@ -258,7 +258,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildProtocol() {
     return new Padding(
-      padding: const EdgeInsets.only(left: 40.0, right: 40.0, top: 10.0),
+      padding: const EdgeInsets.only(left: 40.0, right: 40.0, top: 10.0,bottom: 20.0),
       child: new Container(
         child: new Text.rich(
           new TextSpan(
