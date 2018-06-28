@@ -357,8 +357,6 @@ class _ThemeListPageState extends State<ThemeListPage>
       _normalDatas = normalList;
       _editorDatas = editorList;
 
-      print('${_normalDatas.length}');
-
       _curStoryId = _normalDatas[0].id;
 
       if (null != _editorDatas && _editorDatas.isNotEmpty) {
@@ -367,7 +365,6 @@ class _ThemeListPageState extends State<ThemeListPage>
         _normalDatas.insert(0, fakeItem);
       }
 
-      print('${_normalDatas.length}');
     }
 
     _refreshItems();

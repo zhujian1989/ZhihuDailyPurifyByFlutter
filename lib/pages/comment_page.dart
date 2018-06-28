@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:daily_purify/Utils/date_util.dart';
+import 'package:daily_purify/Utils/route_util.dart';
 import 'package:daily_purify/common/constant.dart';
 import 'package:daily_purify/model/base_model.dart';
 import 'package:daily_purify/model/comment_model.dart';
@@ -158,10 +159,11 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
 
   Widget _buildExpansionTileForShort() {
     return new ExpansionTile(
-      title: new Text('$_shortCommentsLength 条短评论', style: new TextStyle(
-          fontSize: 16.0,
-          fontWeight: FontWeight.w500,
-          color: Colors.black)),
+      title: new Text('$_shortCommentsLength 条短评论',
+          style: new TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w500,
+              color: Colors.black)),
       children: _shortComments.map((CommentModel model) {
         return _buildPopItem(model);
       }).toList(),
@@ -352,8 +354,7 @@ class _CommentPageState extends State<CommentPage> implements CommentView {
     return new BottomAppBar(
       child: new InkWell(
         onTap: () {
-          CommonSnakeBar.buildSnakeBarByKey(
-              _scaffoldStateKey, context, '该功能暂时无法完成');
+          RouteUtil.route2Login(context);
         },
         child: new Container(
           height: 40.0,

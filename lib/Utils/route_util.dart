@@ -1,5 +1,6 @@
 
 import 'package:daily_purify/pages/comment_page.dart';
+import 'package:daily_purify/pages/Login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_purify/widget/common_webview.dart';
 import 'package:daily_purify/Utils/fix_url_util.dart';
@@ -87,7 +88,6 @@ class RouteUtil{
         }));
   }
 
-
   static route2Comment(BuildContext context,String themeId) {
     Navigator.of(context).push(new PageRouteBuilder(
         opaque: false,
@@ -106,5 +106,23 @@ class RouteUtil{
         }));
   }
 
+
+  static route2Login(BuildContext context) {
+    Navigator.of(context).push(new PageRouteBuilder(
+        opaque: false,
+        pageBuilder: (BuildContext context, _, __) {
+          return new LoginPage();
+        },
+        transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
+          return new FadeTransition(
+            opacity: animation,
+            child: new FadeTransition(
+              opacity:
+              new Tween<double>(begin: 0.5, end: 1.0).animate(animation),
+              child: child,
+            ),
+          );
+        }));
+  }
 
 }

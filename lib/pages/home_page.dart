@@ -202,6 +202,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
     );
   }
 
+
   Widget _buildNormalItem(HotNewsStoriesModel item) {
     final String imgUrl = item.images[0];
     final String title = item.title;

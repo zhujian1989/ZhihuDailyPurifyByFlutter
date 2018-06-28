@@ -59,6 +59,9 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
 
   Widget _buildDrawer() {
     return new UserAccountsDrawerHeader(
+      onDetailsPressed: (){
+
+      },
       accountName: new Text('$_name'),
       accountEmail: new Text('370159662@qq.com'),
       currentAccountPicture: new CircleAvatar(

@@ -1,27 +1,5 @@
 import 'package:flutter/material.dart';
-
-const String wx = '微信好友';
-const String wx_circle = '微信朋友圈';
-const String sina = '新浪微博';
-const String msg = '短信';
-//const String qq = 'QQ好友';
-//const String q_zone = 'QQ空间';
-//const String copy_url = '复制链接';
-//const String browser = '浏览器打开';
-
-class Menu {
-  final String title;
-  final String icon;
-
-  const Menu({this.title, this.icon});
-}
-
-const List<Menu> menus = const <Menu>[
-  const Menu(title: wx, icon: "images/icon_wx.png"),
-  const Menu(title: wx_circle, icon: "images/icon_circle.png"),
-  const Menu(title: sina, icon: "images/icon_sina.png"),
-  const Menu(title: msg, icon: "images/icon_msg.png"),
-];
+import 'package:daily_purify/model/menu_model.dart';
 
 class CommonShare {
   static buildShareBottomPop(BuildContext context) {
@@ -36,7 +14,7 @@ class CommonShare {
                 mainAxisSpacing: 4.0,
                 crossAxisSpacing: 4.0,
                 padding: const EdgeInsets.all(4.0),
-                children: menus.map((Menu m) {
+                children: menus_share.map((Menu m) {
                   return new GestureDetector(
                     onTap: () {},
                     child: new Column(
