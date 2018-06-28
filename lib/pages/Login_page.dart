@@ -306,19 +306,18 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _buildBody(){
-    return new SafeArea(
-        child: new ListView(
-          children: <Widget>[
-            _buildCustomBar(),
-            _buildLabel(),
-            _buildPhoneEdit(),
-            _buildVerifyCodeEdit(),
-            _buildRegist(),
-            _buildTips(),
-            _buildThirdPartLogin(),
-            _buildProtocol(),
-          ],
-        ));
+    return new ListView(
+      children: <Widget>[
+        _buildCustomBar(),
+        _buildLabel(),
+        _buildPhoneEdit(),
+        _buildVerifyCodeEdit(),
+        _buildRegist(),
+        _buildTips(),
+        _buildThirdPartLogin(),
+        _buildProtocol(),
+      ],
+    );
   }
 
 
