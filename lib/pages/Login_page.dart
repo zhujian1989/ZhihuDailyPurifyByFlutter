@@ -4,6 +4,7 @@ import 'package:daily_purify/model/menu_model.dart';
 import 'package:daily_purify/widget/common_snakeBar.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -96,7 +97,6 @@ class _LoginPageState extends State<LoginPage> {
       child: new TextField(
         onChanged: (str) {
           _phoneNum = str;
-          print('_phoneNum:$_phoneNum');
           setState(() {});
         },
         decoration: new InputDecoration(
@@ -104,6 +104,12 @@ class _LoginPageState extends State<LoginPage> {
         ),
         maxLines: 1,
         maxLength: 11,
+        //键盘展示为号码
+        keyboardType: TextInputType.phone,
+        //只能输入数字
+        inputFormatters: <TextInputFormatter>[
+          WhitelistingTextInputFormatter.digitsOnly,
+        ],
         onSubmitted: (text) {
           FocusScope.of(context).reparentIfNeeded(node);
         },
@@ -113,10 +119,9 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildVerifyCodeEdit() {
     var node = new FocusNode();
-    Widget edit = new TextField(
+    Widget verifyCodeEdit = new TextField(
       onChanged: (str) {
         _verifyCode = str;
-        print('_verifyCode:$_verifyCode');
         setState(() {});
       },
       decoration: new InputDecoration(
@@ -124,17 +129,22 @@ class _LoginPageState extends State<LoginPage> {
       ),
       maxLines: 1,
       maxLength: 6,
+      //键盘展示为数字
+      keyboardType: TextInputType.number,
+      //只能输入数字
+      inputFormatters: <TextInputFormatter>[
+        WhitelistingTextInputFormatter.digitsOnly,
+      ],
       onSubmitted: (text) {
         FocusScope.of(context).reparentIfNeeded(node);
       },
     );
 
-    Widget btn = new InkWell(
+    Widget verifyCodeBtn = new InkWell(
       onTap: (_seconds == 0)
           ? () {
               setState(() {
                 _startTimer();
-                print('$_seconds');
               });
             }
           : null,
@@ -159,10 +169,10 @@ class _LoginPageState extends State<LoginPage> {
       padding: const EdgeInsets.only(left: 40.0, right: 40.0, top: 10.0),
       child: new Stack(
         children: <Widget>[
-          edit,
+          verifyCodeEdit,
           new Align(
             alignment: Alignment.topRight,
-            child: btn,
+            child: verifyCodeBtn,
           ),
         ],
       ),
@@ -338,3 +348,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
