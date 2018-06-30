@@ -11,7 +11,6 @@ import 'package:daily_purify/pages/drawer_page.dart';
 import 'package:daily_purify/widget/common_divider.dart';
 import 'package:daily_purify/widget/common_snakeBar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ThemeListPage extends StatefulWidget {
@@ -41,8 +40,6 @@ class _ThemeListPageState extends State<ThemeListPage>
   final double _appBarHeight = 256.0;
 
   AppBarBehavior _appBarBehavior = AppBarBehavior.pinned;
-
-  final flutterWebviewPlugin = new FlutterWebviewPlugin();
 
   String _title = Constant.themeTitle;
 
