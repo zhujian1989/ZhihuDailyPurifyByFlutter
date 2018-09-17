@@ -207,6 +207,7 @@ class _HomePageState extends State<HomePage> implements StoriesView {
     final String imgUrl = item.images[0];
     final String title = item.title;
     final int id = item.id;
+
     return new InkWell(
         onTap: () {
           RouteUtil.route2Detail(context, '$id');

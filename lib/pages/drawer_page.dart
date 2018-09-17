@@ -126,7 +126,6 @@ class _DrawerBodyState extends State<DrawerBody> implements ThemeView {
     );
   }
 
-
   Widget _buildBody() {
     if (null != _themeList && _themeList.isNotEmpty) {
       return new Column(
