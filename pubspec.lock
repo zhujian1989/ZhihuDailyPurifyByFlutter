@@ -122,7 +122,7 @@ packages:
       name: flutter_webview_plugin
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.2.1+2"
+    version: "0.3.0+2"
   html:
     dependency: transitive
     description:
