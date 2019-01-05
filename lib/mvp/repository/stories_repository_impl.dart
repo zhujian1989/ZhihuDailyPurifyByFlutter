@@ -44,6 +44,7 @@ Future<BaseModel<HotNewsModel>> _getNews(String date) async {
 
     if (response.statusCode == HttpStatus.OK) {
 
+      print(response.data);
       String date = response.data['date'];
 
       List stories = response.data['stories'];

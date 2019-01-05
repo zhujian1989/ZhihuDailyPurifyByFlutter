@@ -87,7 +87,7 @@ Future<BaseModel<List<CommentModel>>> _getShortComments(String id) async {
 
     code = response.statusCode;
 
-    if (response.statusCode == HttpStatus.OK) {
+    if (response.statusCode == HttpStatus.ok) {
       List comments = response.data['comments'];
 
       commentList = comments.map((model) {
